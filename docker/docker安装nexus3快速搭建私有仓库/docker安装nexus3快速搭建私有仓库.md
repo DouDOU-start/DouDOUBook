@@ -52,9 +52,9 @@ maven-public：仓库分组，把上面三个仓库组合在一起对外提供�
 Blob Stores存储目录在/home/nexus/data/blobs/路径下可以看到。
 ```
 
-![创建blob1][]
+![创建blob1](https://github.com/DouDOU-start/DouDOUBook/blob/master/docker/docker%E5%AE%89%E8%A3%85nexus3%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/image/Snipaste_2023-02-06_17-21-45.png)
 
-![创建blob2][]
+![创建blob2](https://github.com/DouDOU-start/DouDOUBook/blob/master/docker/docker%E5%AE%89%E8%A3%85nexus3%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93/image/Snipaste_2023-02-06_17-24-25.png)
 
 **创建仓库**
 
