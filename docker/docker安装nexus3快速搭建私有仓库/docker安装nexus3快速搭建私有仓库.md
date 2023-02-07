@@ -16,12 +16,14 @@ $ docker pull sonatype/nexus3
 
 # 持久化目录
 $ mkdir -p /home/nexus/data
-$ chmod 777 -R /home/nexus/data
+# 暂时弃用
+# $ chmod 777 -R /home/nexus/data
+$ chown -R 200 /home/nexus/data
 
 # 启动镜像
 $ docker run -d --name nexus3 -p 8081:8081 --restart always \
-	-v /home/nexus/data:/nexus-data \
-	sonatype/nexus3
+-v /home/nexus/data:/nexus-data \
+sonatype/nexus3
 
 # 日志查看，稍等一下，出现 Started Sonatype Nexus OSS 表示启动好了
 $ docker logs -f nexus3
@@ -72,4 +74,19 @@ hosted->proxy->central
 It is recommended practice to place hosted repositories higher in the list than proxy repositories. For proxy repositories, the repository manager needs to check the remote repository which will incur more overhead than a hosted repository lookup.
 
 希望将hosted repositories【托管资源库】的顺序放在proxy repositories【代理资源库】之前，因为一个group【组资源库】中可以涵括这些托管资源库和代理资源库。而一整个的group是作为一个public，一个接口给别人使用的。所以当查找架包的时候，如果代理资源库在前面，那就是先从远程去查找jar，而不是先从托管资源库（本地仓库）去查找是否有jar。这样访问外网的消耗比起来在本地查找，当然是将托管资源库放在代理资源库之前的优先位置了。
+```
+## 数据迁移
+
+```shell
+# 拷贝数据
+$ cp -ar $data_bak /home/nexus/data
+
+# 查看属组是否为200
+$ ls -la /home/nexus/data
+
+# 赋予权限
+$ chown -R 200
+
+# 重启服务
+$ docker restart nexus3
 ```
