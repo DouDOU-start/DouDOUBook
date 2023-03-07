@@ -1,5 +1,10 @@
 # 实用工具列表
 
+## Linux 编辑器
+
+- vim
+- spacevim：https://spacevim.org/
+
 ## 软路由
 
 - 易有云：https://www.linkease.com/
