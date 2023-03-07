@@ -1,5 +1,10 @@
 # 实用工具列表
 
+## 软路由
+
+- 易有云：https://www.linkease.com/
+- openwrt：https://openwrt.org/
+
 ## Markdown
 
 - 官方教程：https://markdown.com.cn/
