@@ -3,7 +3,7 @@
 ## GPT
 
 - ChatGPT：https://chat.openai.com/
-- New Bing：https://www.bing.com/?setmkt=en-us&setlang=en（国内不支持）
+- New Bing（国内不支持）：https://www.bing.com/?setmkt=en-us&setlang=en
 
 ## 国外虚拟号码
 
