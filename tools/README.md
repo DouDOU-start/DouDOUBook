@@ -1,5 +1,14 @@
 # 实用工具列表
 
+## GPT
+
+- ChatGPT：https://chat.openai.com/
+- New Bing：https://www.bing.com/?setmkt=en-us&setlang=en（国内不支持）
+
+## 国外虚拟号码
+
+- https://sms-activate.org/
+
 ## Linux 编辑器
 
 - vim
