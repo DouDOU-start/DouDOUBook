@@ -1,5 +1,11 @@
 # 实用工具列表
 
+## 算法题
+
+- 力扣：https://leetcode.cn/
+- 牛客：https://www.nowcoder.com/
+- 西南科技大学：https://acm.swust.edu.cn/#/
+
 ## GPT
 
 - ChatGPT：https://chat.openai.com/
