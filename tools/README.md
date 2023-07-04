@@ -60,3 +60,7 @@
 
 - ProcessOn：一个在线协作绘图平台，支持在线制作思维导图、流程图、组织结构图、网络拓扑图、鱼骨图、UML图等，同时可实现人与人之间的实时协作和共享，提升团队工作效率。
   - 在线体验地址：https://www.processon.com/
+
+## IDEA激活服务器地址
+
+- https://rushb.pro/article/JetBrains-license-server.html
