@@ -64,3 +64,6 @@
 ## IDEA激活服务器地址
 
 - https://rushb.pro/article/JetBrains-license-server.html
+
+## 裸机管理系统
+- VMware ESXi：可直接安装在物理服务器上的强大的裸机管理系统，是一款虚拟软件，不需安装其他操作系统，是VMware服务器虚拟化的基础。通过直接访问并控制底层资源，VMware ESXi能有效地对硬件进行分区，以便整合应用并降低成本，是业界领先的高效体系架构。
