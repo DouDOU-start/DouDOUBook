@@ -97,3 +97,47 @@ sudo docker run hello-world
     最后，你需要注销并重新登录用户，以便让新的组设置生效。之后，你就可以以非 root 用户身份运行 Docker 命令了。
 
 请注意，添加用户到 `docker` 组等同于赋予他们 root 权限，因为他们可以在 Docker 容器中运行任何命令。只有你完全信任的用户才应被添加到 `docker` 组。
+
+### 9. 在中国大陆的网络环境下，你可能会发现 Docker 的默认镜像仓库速度较慢。幸运的是，你可以设置 Docker 使用国内的镜像源，以提高拉取镜像的速度。
+
+下面是如何设置 Docker 使用阿里云镜像源的步骤：
+
+1. **登录阿里云 Docker 镜像服务**：
+
+    首先，你需要有一个阿里云账号，并登录阿里云 Docker 镜像服务。你可以访问这个链接：https://cr.console.aliyun.com/ ，然后点击 "镜像加速器"。
+
+2. **获取加速器地址**：
+
+    在镜像加速器页面，你会看到一个专属加速器地址，如 `https://xxxxxx.mirror.aliyuncs.com`。请复制这个地址，稍后我们会用到。
+
+3. **配置 Docker daemon**：
+
+    在你的 Docker 宿主机上，打开或创建 Docker daemon 的配置文件。这个文件通常位于 `/etc/docker/daemon.json`。如果这个文件或目录不存在，你可以创建它：
+
+    ```bash
+    sudo mkdir -p /etc/docker
+    sudo nano /etc/docker/daemon.json
+    ```
+
+    在 `daemon.json` 文件中，添加或修改 `registry-mirrors` 键，使用你刚刚复制的阿里云加速器地址。例如：
+
+    ```json
+    {
+      "registry-mirrors": ["https://xxxxxx.mirror.aliyuncs.com"]
+    }
+    ```
+
+    保存并关闭文件。
+
+4. **重启 Docker daemon**：
+
+    最后，你需要重启 Docker daemon 使设置生效：
+
+    ```bash
+    sudo systemctl daemon-reload
+    sudo systemctl restart docker
+    ```
+
+这样，你的 Docker 就被设置为使用阿里云的镜像源了，拉取镜像的速度应该会有所提高。
+
+除了阿里云，还有其他一些国内的 Docker 镜像源，如 网易 163 的镜像源、DaoCloud 的镜像源等，使用方法类似。请注意，使用这些镜像源需要遵守相应服务的使用条款和策略。
