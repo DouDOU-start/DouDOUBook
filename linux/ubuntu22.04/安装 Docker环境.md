@@ -52,3 +52,48 @@ sudo docker run hello-world
 
 # 如果 Docker 安装正确，你应该能看到一个消息，说 Docker 正在下载 `hello-world` 镜像，并输出一个欢迎消息。
 ```
+
+### 8. 非 root用户运行
+如果你希望非 `root` 用户也能运行 Docker 命令，你需要将用户添加到 `docker` 用户组。这样做的结果是，被添加的用户拥有了对 Docker daemon 的权限，也就等同于获得了 root 权限，因为他们现在可以运行任何 Docker 容器。所以，只有你信任的用户才应该被添加到 `docker` 组。
+
+这里是添加用户到 `docker` 组的步骤：
+
+1. **创建 docker 组（如果它不存在）**：
+
+    首先，你需要确认 `docker` 组是否存在。如果不存在，你可以使用以下命令来创建它：
+
+    ```bash
+    sudo groupadd docker
+    ```
+
+2. **将用户添加到 docker 组**：
+
+    然后，你可以使用以下命令将用户添加到 `docker` 组。把 `username` 替换为你要添加的用户名：
+
+    ```bash
+    sudo usermod -aG docker username
+    ```
+
+3. **验证用户是否已经添加到 docker 组**：
+
+    你可以使用以下命令来检查用户是否已经成功添加到 `docker` 组：
+
+    ```bash
+    groups username
+    ```
+
+    如果 `docker` 在输出的组列表中，那就表示用户已经被成功添加到 `docker` 组。
+
+4. **重启 Docker 服务**：
+
+    运行下面的命令来重启 Docker 服务：
+
+    ```bash
+    sudo systemctl restart docker
+    ```
+
+5. **注销并重新登录**：
+
+    最后，你需要注销并重新登录用户，以便让新的组设置生效。之后，你就可以以非 root 用户身份运行 Docker 命令了。
+
+请注意，添加用户到 `docker` 组等同于赋予他们 root 权限，因为他们可以在 Docker 容器中运行任何命令。只有你完全信任的用户才应被添加到 `docker` 组。
