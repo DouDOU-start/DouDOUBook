@@ -66,4 +66,7 @@
 - https://rushb.pro/article/JetBrains-license-server.html
 
 ## 裸机管理系统
+
 - VMware ESXi：可直接安装在物理服务器上的强大的裸机管理系统，是一款虚拟软件，不需安装其他操作系统，是VMware服务器虚拟化的基础。通过直接访问并控制底层资源，VMware ESXi能有效地对硬件进行分区，以便整合应用并降低成本，是业界领先的高效体系架构。
+
+- KVM + Cockpit实现：Cockpit是一个轻量级的Web管理界面，专门用于管理Linux服务器和虚拟化环境。在KVM的基础上使用Cockpit来实现虚拟化管理是个很不错的选择。
