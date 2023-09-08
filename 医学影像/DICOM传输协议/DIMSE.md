@@ -27,3 +27,46 @@
 6. C-RETRIEVE（Confirmation-retrieve）服务：
    - 功能：用于从远程设备检索图像或数据，类似于C-FIND。
    - 过程：发送设备发送C-RETRIEVE请求消息，接收设备根据查询条件搜索数据，然后返回一个包含检索结果的C-RETRIEVE响应消息。
+
+
+## VR
+
+> DICOM（数字成像和通信医疗图像）标准中的信息参数通常与特定的 Value Representation（VR，值表示）关联，VR 指定了参数的数据类型。以下是一些 DICOM 信息参数及其对应的 VR 类型：
+
+1. Patient's Name（患者姓名）：
+   - VR：PN（Person Name）
+
+2. Patient's ID（患者ID）：
+   - VR：LO（Long String）
+
+3. Study Date（检查日期）：
+   - VR：DA（Date）
+
+4. Modality（设备类型/检查模式）：
+   - VR：CS（Code String）
+
+5. Image Pixel Data（图像像素数据）：
+   - VR：OW（Other Byte String）或者像素数据编码的其他 VR 类型。
+
+6. Study Description（检查描述）：
+   - VR：LO（Long String）
+
+7. Study Instance UID（检查实例唯一标识符）：
+   - VR：UI（Unique Identifier）
+
+8. Series Number（序列编号）：
+   - VR：IS（Integer String）
+
+9. Pixel Spacing（像素间距）：
+   - VR：DS（Decimal String）
+
+10. Patient's Sex（患者性别）：
+    - VR：CS（Code String）
+
+11. Patient's Birth Date（患者出生日期）：
+    - VR：DA（Date）
+
+12. SOP Instance UID（SOP实例唯一标识符）：
+    - VR：UI（Unique Identifier）
+
+这些 VR 类型是 DICOM 标准中定义的一部分，用于指定每个信息参数的数据类型。注意，不同的信息参数可以有不同的 VR 类型，这有助于确保数据的一致性和正确性，以便在不同的 DICOM 设备和系统之间进行有效的数据交换和解释。每个 VR 类型都具有特定的编码规则和数据格式，以确保数据的正确解释和存储。
