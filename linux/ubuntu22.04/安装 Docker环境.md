@@ -71,7 +71,7 @@ sudo docker run hello-world
     然后，你可以使用以下命令将用户添加到 `docker` 组。把 `username` 替换为你要添加的用户名：
 
     ```bash
-    sudo usermod -aG docker username
+    sudo usermod -aG docker $(whoami)
     ```
 
 3. **验证用户是否已经添加到 docker 组**：
@@ -79,7 +79,7 @@ sudo docker run hello-world
     你可以使用以下命令来检查用户是否已经成功添加到 `docker` 组：
 
     ```bash
-    groups username
+    groups $(whoami)
     ```
 
     如果 `docker` 在输出的组列表中，那就表示用户已经被成功添加到 `docker` 组。
