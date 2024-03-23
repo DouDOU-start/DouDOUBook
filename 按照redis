@@ -1,0 +1,23 @@
+
+> sudo docker run --name my-redis --restart=always -v redis-data:/data -p 6379:6379 -e REDIS_PASSWORD=my-secret-pw -d redis
+
+1. sudo docker run: 这部分告诉操作系统运行 Docker，并开始创建并运行一个新的容器。
+
+2. --name my-redis: 这个选项指定了容器的名称为 my-redis。这个名称可以在后续的 Docker 命令中用来引用这个容器。
+
+3. --restart=always: 这个选项指示 Docker 当容器退出时总是重新启动它。这意味着如果 Redis 容器因为任何原因停止运行，Docker 将自动重新启动它。
+
+4. -v redis-data:/data: 这个选项用于挂载一个数据卷。redis-data 是本地主机上的目录或者 Docker 卷的名称，它会被挂载到 Redis 容器内部的 /data 目录。这样做是为了持久化 Redis 的数据，使其在容器重新启动时不会丢失。
+
+5. -p 6379:6379: 这个选项将容器内部的 Redis 服务端口映射到主机上的端口。具体来说，将容器内部的 Redis 服务端口 6379 映射到主机上的 6379 端口。这样可以使得主机上的应用程序可以通过 localhost:6379 访问 Redis 服务。
+
+6. -e REDIS_PASSWORD=my-secret-pw: 这个选项用来设置环境变量 REDIS_PASSWORD，其值为 my-secret-pw。这个环境变量将作为 Redis 服务的密码。这样做是为了增加 Redis 的安全性，需要密码才能连接到 Redis 服务。
+
+7. -d: 这个选项表示在后台运行容器，即“分离模式”。这样容器将在后台运行，而不会占用当前的终端。
+
+8. redis: 这是指定要运行的 Docker 镜像的名称。在这个命令中，它是 Redis 官方提供的官方 Docker 镜像。Docker 将会根据这个镜像创建并运行一个新的容器。
+
+
+这个命令的目的是创建一个名为 my-redis 的 Redis 容器，配置它的行为使得容器在退出后自动重启，
+  将 Redis 数据持久化到主机上的 redis-data 目录中，同时映射容器内部的 Redis 服务端口到主机上的 6379 端口，
+  并设置 Redis 服务的密码为 my-secret-pw。
